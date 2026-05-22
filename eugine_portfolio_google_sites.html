@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eugine Omondi | Data Analyst & Policy Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+    ================================================================
+    GOOGLE SITES EMBEDDING INSTRUCTIONS
+    ================================================================
+
+    OPTION A — Recommended (best experience):
+    1. Upload this file to GitHub Pages, Netlify, or Tiiny.host
+    2. In Google Sites: Insert → Embed → By URL → paste your hosted URL
+    3. Resize the embed block to full width
+
+    OPTION B — Paste directly into Google Sites:
+    1. In Google Sites: Insert → Embed → Embed code
+    2. Paste the ENTIRE contents of this file
+    3. Click "Next" then "Insert"
+    4. Resize the embed to fill the page width
+    NOTE: Google Sites sandbox may block some Google Fonts —
+          the page will still work but will fall back to system serif/sans-serif.
+
+    OPTION C — Section by section:
+    Use the individual section files (hero_embed.html, skills_embed.html, etc.)
+    for finer control over your Google Sites page layout.
+
+    REPLACING PLACEHOLDER IMAGES:
+    Search for "REPLACE_IMAGE" comments throughout this file.
+    Swap the placeholder Unsplash URLs with direct links to your own photos
+    (upload to Google Drive → Share → Copy link → use direct image URL).
+    ================================================================
+    -->
+
+    <style>
+        /* ── Reset & Tokens ── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        :root {
+            --navy:   #0d1b2a;
+            --deep:   #1b263b;
+            --mid:    #2a3c54;
+            --rose:   #e63946;
+            --gold:   #f4a261;
+            --text:   #e8edf2;
+            --muted:  #8fa3b8;
+            --border: rgba(255,255,255,0.09);
+            --card:   rgba(255,255,255,0.04);
+            --radius: 14px;
+            --shadow: 0 8px 40px rgba(0,0,0,0.45);
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden;
+            /* Remove top margin so it embeds flush in Google Sites */
+            margin: 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ── Utility ── */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        .tag {
+            display: inline-block;
+            background: rgba(230,57,70,0.12);
+            color: var(--rose);
+            border: 1px solid rgba(230,57,70,0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        .highlight { color: var(--rose); }
+        .gold { color: var(--gold); }
+
+        /* ── Section Header ── */
+        .sec-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .sec-header h2 {
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
+            color: var(--text);
+            margin-bottom: 0.6rem;
+        }
+        .sec-header p { color: var(--muted); font-size: 1rem; }
+        .rule {
+            width: 48px; height: 3px;
+            background: linear-gradient(90deg, var(--rose), var(--gold));
+            border-radius: 2px;
+            margin: 0.75rem auto;
+        }
+
+        /* ═══════════════════════════════════
+           HERO
+        ═══════════════════════════════════ */
+        #hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 60%, #162033 100%);
+            padding: 5rem 1.5rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 520px; height: 520px;
+            background: radial-gradient(circle, rgba(230,57,70,0.09) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 380px; height: 380px;
+            background: radial-gradient(circle, rgba(244,162,97,0.06) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3.5rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text h1 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            background: linear-gradient(135deg, #fff 10%, var(--rose) 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.6rem;
+        }
+        .hero-role {
+            font-size: 1.05rem;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            margin-bottom: 1rem;
+        }
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.4rem;
+        }
+        .hero-meta span { display: flex; align-items: center; gap: 0.35rem; }
+        .hero-bio {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
+        .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .btn-fill {
+            background: var(--rose);
+            color: #fff;
+            border-color: var(--rose);
+        }
+        .btn-fill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(230,57,70,0.35);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            border-color: var(--border);
+        }
+        .btn-ghost:hover { border-color: var(--rose); color: var(--rose); }
+
+        .hero-photo-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-photo-wrap::before {
+            content: '';
+            position: absolute;
+            top: 18px; left: 18px;
+            width: calc(100% - 36px);
+            height: calc(100% - 36px);
+            border: 2px solid var(--rose);
+            border-radius: 18px;
+            opacity: 0.6;
+        }
+        .hero-photo {
+            width: 100%;
+            max-width: 360px;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+            display: block;
+        }
+
+        /* ═══════════════════════════════════
+           ABOUT
+        ═══════════════════════════════════ */
+        #about {
+            padding: 5rem 1.5rem;
+            background: var(--deep);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .about-img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: block;
+        }
+        .about-text h3 {
+            font-size: 1.6rem;
+            color: var(--rose);
+            margin-bottom: 0.9rem;
+        }
+        .about-text p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 1.3rem;
+        }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        .stat {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.4rem 1rem;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .stat:hover { transform: translateY(-4px); border-color: var(--rose); }
+        .stat-n {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--rose);
+            display: block;
+        }
+        .stat-l { font-size: 0.82rem; color: var(--muted); margin-top: 0.25rem; }
+
+        /* ═══════════════════════════════════
+           PORTFOLIO
+        ═══════════════════════════════════ */
+        #portfolio {
+            padding: 5rem 1.5rem;
+            background: var(--navy);
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .p-card {
+            background: var(--deep);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .p-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: rgba(230,57,70,0.45);
+        }
+        .p-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .p-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .p-card:hover .p-img img { transform: scale(1.06); }
+        .p-body { padding: 1.4rem; }
+        .p-body h3 { font-size: 1.15rem; margin: 0.6rem 0 0.5rem; }
+        .p-body p { color: var(--muted); font-size: 0.93rem; line-height: 1.65; }
+        .metrics {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .m { text-align: center; }
+        .m-v { font-weight: 700; color: var(--gold); font-size: 1rem; }
+        .m-l { font-size: 0.72rem; color: var(--muted); }
+
+        /* ═══════════════════════════════════
+           ELEVATOR PITCH
+        ═══════════════════════════════════ */
+        #pitch {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(135deg, var(--mid) 0%, var(--deep) 100%);
+            text-align: center;
+        }
+        .pitch-inner { max-width: 760px; margin: 0 auto; }
+        .video-box {
+            width: 100%;
+            max-width: 680px;
+            aspect-ratio: 16/9;
+            background: var(--navy);
+            border: 2px dashed var(--border);
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem auto;
+            color: var(--muted);
+            font-size: 0.95rem;
+            gap: 0.6rem;
+        }
+        .video-box .play-icon {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: rgba(230,57,70,0.15);
+            border: 2px solid var(--rose);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            color: var(--rose);
+            margin-bottom: 0.5rem;
+        }
+        /* ── YouTube / Google Drive embed helper ── */
+        .video-embed {
+            width: 100%;
+            max-width: 680px;
+            aspect-ratio: 16/9;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: 2rem auto;
+            border: none;
+        }
+        .pitch-quote {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.85;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .pitch-quote strong { color: var(--rose); }
+
+        /* ═══════════════════════════════════
+           SKILLS
+        ═══════════════════════════════════ */
+        #skills {
+            padding: 5rem 1.5rem;
+            background: var(--deep);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .s-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.8rem 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .s-card:hover { transform: translateY(-3px); border-color: var(--rose); }
+        .s-icon {
+            width: 46px; height: 46px;
+            background: rgba(230,57,70,0.1);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 0.9rem;
+        }
+        .s-card h3 { font-size: 1.05rem; margin-bottom: 0.75rem; }
+        .s-list { list-style: none; color: var(--muted); font-size: 0.9rem; }
+        .s-list li {
+            padding: 0.25rem 0 0.25rem 1.1rem;
+            position: relative;
+        }
+        .s-list li::before {
+            content: '▸';
+            position: absolute; left: 0;
+            color: var(--rose);
+        }
+
+        /* ═══════════════════════════════════
+           TESTIMONIALS
+        ═══════════════════════════════════ */
+        #testimonials {
+            padding: 5rem 1.5rem;
+            background: var(--navy);
+        }
+        .t-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 1.6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .t-card {
+            background: var(--deep);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.8rem;
+            position: relative;
+        }
+        .t-card::before {
+            content: '"';
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 5rem;
+            color: var(--rose);
+            opacity: 0.2;
+            position: absolute;
+            top: 4px; left: 18px;
+            line-height: 1;
+        }
+        .t-text {
+            color: var(--muted);
+            font-style: italic;
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin-bottom: 1.3rem;
+            padding-top: 1.2rem;
+        }
+        .t-author { display: flex; align-items: center; gap: 0.9rem; }
+        .avatar {
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: var(--mid);
+            border: 2px solid var(--rose);
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: var(--rose); font-size: 0.85rem;
+        }
+        .t-name { font-size: 0.95rem; font-weight: 600; }
+        .t-role { font-size: 0.8rem; color: var(--muted); margin-top: 0.1rem; }
+        .t-note {
+            max-width: 680px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.88rem;
+            padding: 1rem;
+            background: rgba(230,57,70,0.05);
+            border-radius: 10px;
+            border: 1px dashed var(--border);
+        }
+
+        /* ═══════════════════════════════════
+           GALLERY
+        ═══════════════════════════════════ */
+        #gallery {
+            padding: 5rem 1.5rem;
+            background: var(--deep);
+        }
+        .g-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .g-item {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            cursor: pointer;
+        }
+        .g-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .g-item:hover img { transform: scale(1.08); }
+        .g-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(transparent 35%, rgba(13,27,42,0.96) 100%);
+            padding: 1.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .g-item:hover .g-overlay { opacity: 1; }
+        .g-overlay h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+        .g-overlay p { font-size: 0.82rem; color: var(--muted); }
+
+        /* ═══════════════════════════════════
+           RESUME CTA
+        ═══════════════════════════════════ */
+        #resume {
+            padding: 5rem 1.5rem;
+            background: var(--navy);
+            text-align: center;
+        }
+        .resume-card {
+            background: linear-gradient(135deg, var(--mid) 0%, var(--deep) 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 660px;
+            margin: 0 auto;
+        }
+        .resume-card h2 { font-size: 1.9rem; margin-bottom: 0.9rem; }
+        .resume-card p { color: var(--muted); margin-bottom: 1.8rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+        /* ═══════════════════════════════════
+           CONTACT
+        ═══════════════════════════════════ */
+        #contact {
+            padding: 5rem 1.5rem;
+            background: var(--deep);
+            text-align: center;
+        }
+        .c-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.4rem;
+            max-width: 900px;
+            margin: 2.5rem auto 0;
+        }
+        .c-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.8rem 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+            color: var(--text);
+            text-decoration: none;
+            display: block;
+        }
+        .c-card:hover { transform: translateY(-4px); border-color: var(--rose); }
+        .c-icon { font-size: 2rem; margin-bottom: 0.7rem; }
+        .c-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+        .c-card p { color: var(--muted); font-size: 0.9rem; }
+
+        /* ═══════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════ */
+        footer {
+            background: #07111b;
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--muted);
+        }
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 1.3rem;
+        }
+        .soc {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            background: var(--card);
+            border: 1px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text);
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s, border-color 0.3s;
+        }
+        .soc:hover {
+            background: var(--rose);
+            border-color: var(--rose);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        footer small { font-size: 0.82rem; opacity: 0.6; }
+
+        /* ═══════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════ */
+        @media (max-width: 720px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-photo-wrap { order: -1; }
+            .hero-photo { max-width: 260px; height: 320px; margin: 0 auto; }
+            .hero-meta { justify-content: center; }
+            .cta-row { justify-content: center; }
+            .about-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .hero-text h1 { font-size: 2.2rem; }
+        }
+
+        /* ═══════════════════════════════════
+           SCROLL REVEAL (CSS only)
+        ═══════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section id="hero">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>Eugine Omondi</h1>
+            <p class="hero-role">Data Analyst &nbsp;·&nbsp; Policy Analyst &nbsp;·&nbsp; Quantitative Analyst</p>
+            <div class="hero-meta">
+                <span>📍 Kisumu County, Kenya</span>
+                <span>📱 +254 745 339 539</span>
+            </div>
+            <p class="hero-bio">
+                Data and Quantitative Analytics professional with expertise in econometric modelling,
+                statistical analysis, and field research. I transform complex datasets into actionable
+                insights that drive evidence-based decisions and operational efficiency.
+            </p>
+            <div class="cta-row">
+                <a href="#portfolio" class="btn btn-fill">View My Work →</a>
+                <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-photo-wrap">
+            <!--
+                REPLACE_IMAGE: swap the src below with your own professional headshot.
+                Example using Google Drive:
+                  - Upload photo to Drive
+                  - Right-click → Share → Anyone with link
+                  - Copy link: https://drive.google.com/file/d/FILE_ID/view
+                  - Use: https://drive.google.com/uc?id=FILE_ID
+            -->
+            <img
+                class="hero-photo"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face"
+                alt="Eugine Omondi — Professional Photo"
+            >
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+<section id="about">
+    <div class="sec-header container">
+        <h2>About Me</h2>
+        <div class="rule"></div>
+        <p>Background, expertise &amp; what drives me</p>
+    </div>
+    <div class="about-grid container">
+        <div>
+            <!-- REPLACE_IMAGE: a photo of you working / in the field -->
+            <img
+                class="about-img"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=500&fit=crop"
+                alt="Eugine at work"
+            >
+        </div>
+        <div class="about-text">
+            <h3>Turning Data Into Decisions</h3>
+            <p>
+                I'm a results-driven Data and Policy Analyst based in Kisumu, Kenya, with a strong
+                foundation in econometrics, statistical modelling, and quantitative research. My work
+                spans agricultural data analysis, monetary policy research, and performance optimisation —
+                always with the goal of delivering clear, actionable insights.
+            </p>
+            <p>
+                Currently serving as a Graduate Analyst at Savannah Seritech, I've successfully reduced
+                silkworm mortality by 75% and optimised rearing conditions to achieve consistent 1.2 kg+
+                yields per 1,000 silkworms. I also led analysis of 196+ Bambara nut accessions,
+                identifying top-performing varieties that directly informed procurement strategy.
+            </p>
+            <p>
+                With a BA in Economics and Mathematics from Egerton University and ongoing Data Science
+                training at ALX Africa, I bring both academic rigour and practical field experience to
+                every project.
+            </p>
+            <div class="stats-row">
+                <div class="stat reveal">
+                    <span class="stat-n">5+</span>
+                    <span class="stat-l">Rearing Cycles Optimised</span>
+                </div>
+                <div class="stat reveal">
+                    <span class="stat-n">196+</span>
+                    <span class="stat-l">Accessions Analysed</span>
+                </div>
+                <div class="stat reveal">
+                    <span class="stat-n">75%</span>
+                    <span class="stat-l">Mortality Reduction</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PORTFOLIO
+══════════════════════════════════════ -->
+<section id="portfolio">
+    <div class="sec-header container">
+        <h2>Portfolio</h2>
+        <div class="rule"></div>
+        <p>Selected projects and accomplishments</p>
+    </div>
+    <div class="portfolio-grid container">
+
+        <!-- Project 1 -->
+        <div class="p-card reveal">
+            <div class="p-img">
+                <!-- REPLACE_IMAGE: silkworm / sericultural production photo -->
+                <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&h=400&fit=crop" alt="Silkworm Rearing Optimisation">
+            </div>
+            <div class="p-body">
+                <span class="tag">Production Optimisation</span>
+                <h3>Silkworm Rearing Condition Optimisation</h3>
+                <p>Developed data-driven rearing protocols that dramatically improved survival rates and yield consistency across multiple production cycles at Savannah Seritech.</p>
+                <div class="metrics">
+                    <div class="m"><div class="m-v">40%→10%</div><div class="m-l">Mortality Rate</div></div>
+                    <div class="m"><div class="m-v">1.2 kg+</div><div class="m-l">Yield / 1,000 worms</div></div>
+                    <div class="m"><div class="m-v">5</div><div class="m-l">Cycles</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="p-card reveal">
+            <div class="p-img">
+                <!-- REPLACE_IMAGE: field / crop research photo -->
+                <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop" alt="Bambara Nut Field Trials">
+            </div>
+            <div class="p-body">
+                <span class="tag">Agricultural Research</span>
+                <h3>Bambara Nut Accession Analysis</h3>
+                <p>Led comprehensive field-trial analysis across Homa Bay, evaluating 196+ accessions to identify top-performing varieties for procurement and seed selection strategy.</p>
+                <div class="metrics">
+                    <div class="m"><div class="m-v">196+</div><div class="m-l">Accessions</div></div>
+                    <div class="m"><div class="m-v">9</div><div class="m-l">Top Varieties</div></div>
+                    <div class="m"><div class="m-v">~32</div><div class="m-l">Pods / Plant</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="p-card reveal">
+            <div class="p-img">
+                <!-- REPLACE_IMAGE: economics / data chart photo -->
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop" alt="Monetary Policy Research">
+            </div>
+            <div class="p-body">
+                <span class="tag">Econometric Modelling</span>
+                <h3>Monetary Policy &amp; Inflation in Kenya</h3>
+                <p>Built a VAR-based econometric model using real CBK &amp; KNBS data (2013–2022) to analyse relationships between interest rates, money supply, and inflation dynamics.</p>
+                <div class="metrics">
+                    <div class="m"><div class="m-v">VAR</div><div class="m-l">Model Type</div></div>
+                    <div class="m"><div class="m-v">10 Yrs</div><div class="m-l">Data Range</div></div>
+                    <div class="m"><div class="m-v">OLS</div><div class="m-l">Technique</div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ELEVATOR PITCH
+══════════════════════════════════════ -->
+<section id="pitch">
+    <div class="pitch-inner">
+        <div class="sec-header">
+            <h2>Elevator Pitch</h2>
+            <div class="rule"></div>
+            <p>My background, top skills &amp; value proposition — in my own words</p>
+        </div>
+
+        <!--
+            VIDEO OPTIONS — uncomment the one that applies:
+
+            OPTION 1: YouTube embed
+            <iframe class="video-embed"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            OPTION 2: Google Drive embed
+            <iframe class="video-embed"
+                src="https://drive.google.com/file/d/YOUR_FILE_ID/preview"
+                frameborder="0"
+                allow="autoplay"
+                allowfullscreen>
+            </iframe>
+
+            OPTION 3: Loom embed
+            <iframe class="video-embed"
+                src="https://www.loom.com/embed/YOUR_VIDEO_ID"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        -->
+
+        <!-- Placeholder — remove this block once you add your video embed above -->
+        <div class="video-box">
+            <div class="play-icon">▶</div>
+            <strong>Video Coming Soon</strong>
+            <span style="font-size:0.82rem;">Upload to YouTube / Google Drive / Loom, then replace this block with the iframe above.</span>
+        </div>
+
+        <p class="pitch-quote">
+            <strong>Quick Pitch:</strong> I'm Eugine Omondi — a Data and Policy Analyst who transforms
+            raw data into strategic decisions. With expertise in econometric modelling, statistical
+            analysis, and field research, I help organisations optimise operations, identify
+            high-performing solutions, and make evidence-based choices. Whether it's reducing
+            production losses by 75% or analysing 196+ crop varieties to inform procurement, I deliver
+            insights that drive real impact.
+        </p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SKILLS
+══════════════════════════════════════ -->
+<section id="skills">
+    <div class="sec-header container">
+        <h2>Services &amp; Expertise</h2>
+        <div class="rule"></div>
+        <p>What I bring to the table</p>
+    </div>
+    <div class="skills-grid container">
+        <div class="s-card reveal">
+            <div class="s-icon">📊</div>
+            <h3>Statistical &amp; Data Analysis</h3>
+            <ul class="s-list">
+                <li>R (Intermediate)</li>
+                <li>Advanced Microsoft Excel (PivotTables, Data Models)</li>
+                <li>Power BI (Basic)</li>
+                <li>Data Cleaning &amp; Validation</li>
+                <li>Trend Analysis &amp; Reporting</li>
+            </ul>
+        </div>
+        <div class="s-card reveal">
+            <div class="s-icon">📈</div>
+            <h3>Econometric Methods</h3>
+            <ul class="s-list">
+                <li>OLS Regression</li>
+                <li>VAR (Vector Autoregression)</li>
+                <li>Time-Series Analysis</li>
+                <li>Panel Data Analysis</li>
+                <li>Regression Modelling</li>
+            </ul>
+        </div>
+        <div class="s-card reveal">
+            <div class="s-icon">📝</div>
+            <h3>Survey &amp; Data Management</h3>
+            <ul class="s-list">
+                <li>Survey Design &amp; Implementation</li>
+                <li>Data Collection Protocols</li>
+                <li>Data Quality Assurance</li>
+                <li>Field Research Coordination</li>
+                <li>Performance Metrics Tracking</li>
+            </ul>
+        </div>
+        <div class="s-card reveal">
+            <div class="s-icon">🎯</div>
+            <h3>Visualisation &amp; Reporting</h3>
+            <ul class="s-list">
+                <li>Data Visualisation &amp; Dashboards</li>
+                <li>Policy Briefs Development</li>
+                <li>Quantitative Research Reports</li>
+                <li>Stakeholder Presentations</li>
+                <li>Evidence-Based Recommendations</li>
+            </ul>
+        </div>
+        <div class="s-card reveal">
+            <div class="s-icon">🌾</div>
+            <h3>Sector Expertise</h3>
+            <ul class="s-list">
+                <li>Agricultural Data Analysis</li>
+                <li>Production Optimisation</li>
+                <li>Procurement Strategy Support</li>
+                <li>Development Sector Research</li>
+                <li>Fintech &amp; Policy Analysis</li>
+            </ul>
+        </div>
+        <div class="s-card reveal">
+            <div class="s-icon">💼</div>
+            <h3>Professional Skills</h3>
+            <ul class="s-list">
+                <li>Project Management</li>
+                <li>Cross-functional Collaboration</li>
+                <li>Technical Report Writing</li>
+                <li>Problem Solving &amp; Critical Thinking</li>
+                <li>English &amp; Kiswahili (Fluent)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section id="testimonials">
+    <div class="sec-header container">
+        <h2>Testimonials &amp; Recommendations</h2>
+        <div class="rule"></div>
+        <p>What colleagues and mentors say</p>
+    </div>
+    <div class="t-grid container">
+        <div class="t-card reveal">
+            <p class="t-text">
+                Eugine's analytical approach to our silkworm rearing challenges was exceptional.
+                His data-driven recommendations reduced our mortality rates significantly and improved
+                yield consistency beyond expectations.
+            </p>
+            <div class="t-author">
+                <div class="avatar">SM</div>
+                <div>
+                    <div class="t-name">Savannah Seritech Manager</div>
+                    <div class="t-role">Supervisor, Graduate Analyst Programme</div>
+                </div>
+            </div>
+        </div>
+        <div class="t-card reveal">
+            <p class="t-text">
+                His econometric analysis demonstrated strong technical competence and the ability to
+                translate complex statistical findings into clear, actionable insights for policy
+                consideration.
+            </p>
+            <div class="t-author">
+                <div class="avatar">EU</div>
+                <div>
+                    <div class="t-name">Egerton University Faculty</div>
+                    <div class="t-role">Project Supervisor, Economics Department</div>
+                </div>
+            </div>
+        </div>
+        <div class="t-card reveal">
+            <p class="t-text">
+                Eugine consistently delivers thorough, well-researched analysis with attention to detail.
+                His work on the Bambara nut trials provided critical data that shaped our procurement
+                strategy.
+            </p>
+            <div class="t-author">
+                <div class="avatar">RO</div>
+                <div>
+                    <div class="t-name">Research Officer</div>
+                    <div class="t-role">Collaborator, Field Trials Homa Bay</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="t-note container">
+        💡 <strong>To add real testimonials:</strong> request a LinkedIn recommendation or brief email quote from supervisors / professors, then replace the placeholder text and initials above.
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     GALLERY
+══════════════════════════════════════ -->
+<section id="gallery">
+    <div class="sec-header container">
+        <h2>Gallery</h2>
+        <div class="rule"></div>
+        <p>Moments from my professional journey</p>
+    </div>
+    <div class="g-grid container">
+        <!-- REPLACE_IMAGE ×6: swap with your own photos -->
+        <div class="g-item reveal">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=500&fit=crop" alt="Data Analysis Work">
+            <div class="g-overlay"><h4>Deep in Data</h4><p>Analysing production datasets</p></div>
+        </div>
+        <div class="g-item reveal">
+            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&h=500&fit=crop" alt="Field Research">
+            <div class="g-overlay"><h4>Field Research</h4><p>Bambara nut trials, Homa Bay</p></div>
+        </div>
+        <div class="g-item reveal">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=500&fit=crop" alt="Team Collaboration">
+            <div class="g-overlay"><h4>Team Collaboration</h4><p>Savannah Seritech research team</p></div>
+        </div>
+        <div class="g-item reveal">
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=500&fit=crop" alt="Academic Work">
+            <div class="g-overlay"><h4>Academic Excellence</h4><p>Econometric research, Egerton University</p></div>
+        </div>
+        <div class="g-item reveal">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=500&fit=crop" alt="Continuous Learning">
+            <div class="g-overlay"><h4>Continuous Learning</h4><p>Data Science training, ALX Africa</p></div>
+        </div>
+        <div class="g-item reveal">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=500&fit=crop" alt="Report Writing">
+            <div class="g-overlay"><h4>Report Development</h4><p>Crafting policy briefs &amp; research reports</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     RESUME CTA
+══════════════════════════════════════ -->
+<section id="resume">
+    <div class="resume-card">
+        <h2>Download My Full CV</h2>
+        <p>Get the complete picture of my experience, education, certifications, and technical skills in a professional PDF.</p>
+        <!--
+            REPLACE href with your Google Drive PDF link:
+            Drive → Share → Anyone with link → Copy link
+            → change /view to /preview or use: https://drive.google.com/uc?id=FILE_ID&export=download
+        -->
+        <a href="#" class="btn btn-fill">📄 Download CV / Resume</a>
+        <p style="margin-top:1rem;font-size:0.82rem;color:var(--muted);">Upload your PDF to Google Drive and paste the share link into the href above.</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section id="contact">
+    <div class="sec-header container">
+        <h2>Let's Connect</h2>
+        <div class="rule"></div>
+        <p>Ready to collaborate? Here's how to reach me</p>
+    </div>
+    <div class="c-grid container">
+        <a href="mailto:eugineomondi04@gmail.com" class="c-card reveal">
+            <div class="c-icon">✉️</div>
+            <h3>Email</h3>
+            <p>eugineomondi04@gmail.com</p>
+        </a>
+        <a href="tel:+254745339539" class="c-card reveal">
+            <div class="c-icon">📱</div>
+            <h3>Phone</h3>
+            <p>+254 745 339 539</p>
+        </a>
+        <!-- REPLACE href with your actual LinkedIn URL -->
+        <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener" class="c-card reveal">
+            <div class="c-icon">💼</div>
+            <h3>LinkedIn</h3>
+            <p>Connect on LinkedIn</p>
+        </a>
+        <div class="c-card reveal">
+            <div class="c-icon">📍</div>
+            <h3>Location</h3>
+            <p>Kisumu County, Kenya</p>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+    <div class="footer-socials">
+        <!-- REPLACE href values with your real profile URLs -->
+        <a href="https://linkedin.com/in/YOUR-HANDLE" class="soc" title="LinkedIn" target="_blank" rel="noopener">in</a>
+        <a href="https://twitter.com/YOUR-HANDLE"    class="soc" title="Twitter/X" target="_blank" rel="noopener">𝕏</a>
+        <a href="https://github.com/YOUR-HANDLE"     class="soc" title="GitHub"    target="_blank" rel="noopener">gh</a>
+        <a href="mailto:eugineomondi04@gmail.com"    class="soc" title="Email">@</a>
+    </div>
+    <p>© 2025 Eugine Omondi · Built with precision and purpose.</p>
+    <small>Data Analyst &nbsp;|&nbsp; Policy Analyst &nbsp;|&nbsp; Quantitative Analyst</small>
+</footer>
+
+<!-- ══════════════════════════════════════
+     JS — scroll reveal only (no nav needed; Google Sites provides its own)
+══════════════════════════════════════ -->
+<script>
+(function () {
+    'use strict';
+
+    /* ── Scroll reveal ── */
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+        io.observe(el);
+    });
+
+    /* ── Smooth-scroll for in-page anchor links ── */
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+})();
+</script>
+
+</body>
+</html>
